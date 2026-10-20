@@ -1,5 +1,23 @@
 <html>
     <body>
-        {{ vendas_tpl }}
+        {{ vendas }}
+        <table>
+            <thead>
+                <tr>
+                    <th>produto</th>
+                    <th>quantidade</th>
+                    <th>preco</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for venda in vendas %}
+                <tr>
+                    <td>{{ venda[1] }}</td>
+                    <td>{{ venda[2] }}</td>
+                    <td>{{ venda[3] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </body>
 </html>

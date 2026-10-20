@@ -1,6 +1,5 @@
 from flask import Flask, render_template
-from controllers.venda_controller import cadastrar
-from controllers.venda_controller import listar
+from controllers.venda_controller import cadastrar, listar, importar
 from database import criar_tabela
 app = Flask(__name__)
 
@@ -15,6 +14,10 @@ def salvar_venda():
 @app.route("/listar", methods=["GET"])
 def listar_vendas():
     return listar()
+
+@app.route("/importar", methods=["GET", "POST"])
+def importar_arquivo():
+    return importar()
 
 criar_tabela()
 app.run(debug=True)

@@ -10,5 +10,12 @@ def cadastrar():
     return render_template("sucesso.html",produto=produto)
 
 def listar():
-    vendas_ctrl = Venda.listar()
-    return render_template("listar.html",vendas_tpl=vendas_ctrl)
+    vendas = Venda.listar()
+    return render_template("listar.html",vendas=vendas)
+
+def importar():
+    if request.method == "GET":
+        return render_template("importar.html")
+    if request.method == "POST":
+        # processar o arquivo
+        pass
