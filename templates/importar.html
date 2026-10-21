@@ -1,8 +1,11 @@
 <html>
     <body>
         <h1>Importação de Vendas</h1>
-        <form>
-            
+        <form action="/importar" method="post" enctype="multipart/form-data">
+            <label>Escolher o CSV:</label><br>
+            <input type="file" name="arquivo" 
+            accept=".csv, .xls, .xlsx" required><br>
+            <button type="submit"> Importar </button>
         </form>
     </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import request, render_template
+from flask import request, render_template,render_template_string
 from models.venda import Venda
 
 def cadastrar():
@@ -17,5 +17,4 @@ def importar():
     if request.method == "GET":
         return render_template("importar.html")
     if request.method == "POST":
-        # processar o arquivo
-        pass
+        return render_template_string("<h1>funcionou<h1>")
